@@ -4,7 +4,7 @@
   -->
   <div>
     <el-card class="box-card item" v-for="(item,idx) in articleList" :key="idx">
-      <div slot="header" class="clearfix" >
+        <div slot="header" class="clearfix" >
         <span class="title" v-if="item.article_title">{{item.article_title}}</span>
         <span style="float:right" class="time" v-if="item.article_first_time">{{changeTime(item.article_first_time)}}</span>
       </div>
@@ -13,26 +13,26 @@
   </div>
 </template>
 <script>
-import {changeTimeStamp} from '@/tools/tools'
+import { changeTimeStamp } from '@/tools/tools'
 export default {
-  data() {
+  data () {
     return {
-      msg: "123"
-    };
+      msg: '123'
+    }
   },
-  props:{
-      articleList:Array
+  props: {
+    articleList: Array
   },
-    methods:{
-    toArticleDetail(item){
+  methods: {
+    toArticleDetail (item) {
       const id = item._id
-      this.$router.push({path:'/articledetail',query:{id}})
+      this.$router.push({ path: '/articledetail', query: { id } })
     },
-    changeTime(val){
-       return changeTimeStamp(val)
+    changeTime (val) {
+      return changeTimeStamp(val)
     }
   }
-};
+}
 </script>
 <style scoped>
 .box-card {
