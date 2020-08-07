@@ -1,8 +1,8 @@
 <template>
   <div class="pagination">
-    <el-pagination
-      background
-      layout="prev, pager, next"
+    <el-pagination 
+      background 
+      layout="prev, pager, next" 
       :total="Number(total)"
       @current-change="currentChangeHandler"
     ></el-pagination>
@@ -10,24 +10,24 @@
 </template>
 <script>
 export default {
-  data () {
+  data() {
     return {
-      msg: '123'
-    }
+      msg: "123"
+    };
   },
   props: {
     total: Number
   },
-  created () {
-    console.log(this.total)
+  created() {
+    console.log(this.total);
   },
-  methods: {
-    currentChangeHandler (val) {
-      console.log('触发分页事件,当前第几页', val)
-      this.$emit('currentPage', val)
+  methods:{
+    currentChangeHandler(val){
+      console.log('触发分页事件,当前第几页',val)
+      this.$emit('currentPage',val)
     }
   }
-}
+};
 </script>
 <style scoped>
 .pagination {

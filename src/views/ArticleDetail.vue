@@ -13,29 +13,29 @@
 import { reqArticleById } from '@/config/api'
 import { changeTimeStamp } from '@/tools/tools'
 export default {
-  data () {
-    return {
-      msg: '123',
-      currendArticleId: '',
-      articleInfo: {}
-    }
-  },
-  mounted () {
-    this.currendArticleId = this.$route.query.id
-    this.getArticleById(this.$route.query.id)
-    console.log(changeTimeStamp(1589010823605))
-  },
-  methods: {
-    async getArticleById (id) {
-      const result = await reqArticleById({ id })
-      if (result.success) {
-        this.articleInfo = result.module[0]
-      }
+    data(){
+        return{
+            msg:'123',
+            currendArticleId:'',
+            articleInfo:{}
+        }
     },
-    changeTime (val) {
-      return changeTimeStamp(val)
+    mounted(){
+        this.currendArticleId = this.$route.query.id
+        this.getArticleById(this.$route.query.id)
+        console.log(changeTimeStamp(1589010823605))
+    },
+    methods:{
+        async getArticleById(id){
+            const result = await reqArticleById({id})
+            if(result.success){
+                this.articleInfo = result.module[0]
+            }
+        },
+        changeTime(val){
+            return changeTimeStamp(val)
+        }
     }
-  }
 }
 </script>
 <style>
